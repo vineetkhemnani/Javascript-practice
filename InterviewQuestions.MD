@@ -119,3 +119,12 @@ function letScoping() {
   - map() returns a new array, so you can chain other array methods (e.g., filter(), reduce()) after it.
   - forEach():
   forEach() returns undefined, so you cannot chain other array methods directly after it.
+
+
+9. const{a,b,c,...h}=countChar('aabbcdEe')
+  - output:-   a=2,b=2,c=1, {d:1,e:2}
+
+10. let arr=[1,2,3]
+    const[a,...b]=arr
+    console.log(a,b)
+  - output: 1,[2,3]
