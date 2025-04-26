@@ -1,4 +1,3 @@
-
 # JavaScript Interview Notes 🧠✨
 
 ---
@@ -6,14 +5,14 @@
 ## 1. Code Output
 
 ```js
-var x = 2;
-console.log(x++); // 2
+var x = 2
+console.log(x++) // 2
 
-let y = 2;
-console.log(y++); // 2
+let y = 2
+console.log(y++) // 2
 
-const z = 2;
-console.log(z++); // ❌ TypeError: Assignment to constant variable.
+const z = 2
+console.log(z++) // ❌ TypeError: Assignment to constant variable.
 ```
 
 ---
@@ -24,9 +23,9 @@ console.log(z++); // ❌ TypeError: Assignment to constant variable.
 - **Purpose**: Execute a function immediately after its declaration
 
 ```js
-((a, b) => {
-  console.log(a + b); // Output: 30
-})(10, 20);
+;((a, b) => {
+  console.log(a + b) // Output: 30
+})(10, 20)
 ```
 
 ---
@@ -42,14 +41,14 @@ console.log(z++); // ❌ TypeError: Assignment to constant variable.
 
 ```js
 const user = {
-  firstName: "Piyush!",
+  firstName: 'Piyush!',
   getName() {
-    const firstName = "Amit!";
-    return this.firstName;
-  }
-};
+    const firstName = 'Amit!'
+    return this.firstName
+  },
+}
 
-console.log(user.getName()); // Output: Piyush!
+console.log(user.getName()) // Output: Piyush!
 ```
 
 ---
@@ -64,25 +63,25 @@ console.log(user.getName()); // Output: Piyush!
 
 ```js
 function varScoping() {
-  var x = 1;
+  var x = 1
 
   if (true) {
-    var x = 2;
-    console.log(x); // 2
+    var x = 2
+    console.log(x) // 2
   }
 
-  console.log(x); // 2
+  console.log(x) // 2
 }
 
 function letScoping() {
-  let x = 1;
+  let x = 1
 
   if (true) {
-    let x = 2;
-    console.log(x); // 2
+    let x = 2
+    console.log(x) // 2
   }
 
-  console.log(x); // 1
+  console.log(x) // 1
 }
 ```
 
@@ -97,46 +96,46 @@ function letScoping() {
 - Takes a **callback** with `accumulator` and `current` value
 
 ```js
-const arr = [1, 2, 3, 4];
-const sum = arr.reduce((acc, curr) => acc + curr, 0);
-console.log(sum); // 10
+const arr = [1, 2, 3, 4]
+const sum = arr.reduce((acc, curr) => acc + curr, 0)
+console.log(sum) // 10
 ```
 
 ---
 
 ## 8. JavaScript Variable Types
 
-| Value                      | typeof result     |
-|---------------------------|-------------------|
-| `undefined`               | `"undefined"`     |
-| `true`                    | `"boolean"`       |
-| `42`                      | `"number"`        |
-| `NaN`                     | `"number"` ✅     |
-| `"abc"`                   | `"string"`        |
-| `9007199254740991n`       | `"bigint"`        |
-| `null`                    | `"object"` ❗️     |
-| `Symbol("id")`            | `"symbol"`        |
-| `{a: 1}`                  | `"object"`        |
-| `[1, 2, 3]`               | `"object"`        |
-| `new Date()`              | `"object"`        |
-| `/regex/`                 | `"object"`        |
-| `new Map()`               | `"object"`        |
-| `new Set()`               | `"object"`        |
-| `function() {}`           | `"function"`      |
-| `class MyClass {}`        | `"function"`      |
-| `typeof undefinedVar`     | `"undefined"`     |
-| `obj.nonExistentProperty` | `"undefined"`     |
+| Value                     | typeof result  |
+| ------------------------- | -------------- |
+| `undefined`               | `"undefined"`  |
+| `true`                    | `"boolean"`    |
+| `42`                      | `"number"`     |
+| `NaN`                     | `"number"` ✅  |
+| `"abc"`                   | `"string"`     |
+| `9007199254740991n`       | `"bigint"`     |
+| `null`                    | `"object"` ❗️ |
+| `Symbol("id")`            | `"symbol"`     |
+| `{a: 1}`                  | `"object"`     |
+| `[1, 2, 3]`               | `"object"`     |
+| `new Date()`              | `"object"`     |
+| `/regex/`                 | `"object"`     |
+| `new Map()`               | `"object"`     |
+| `new Set()`               | `"object"`     |
+| `function() {}`           | `"function"`   |
+| `class MyClass {}`        | `"function"`   |
+| `typeof undefinedVar`     | `"undefined"`  |
+| `obj.nonExistentProperty` | `"undefined"`  |
 
 ---
 
 ## 9. `map()` vs `forEach()`
 
-| Feature       | `map()`                                   | `forEach()`                                |
-|---------------|--------------------------------------------|---------------------------------------------|
-| Purpose       | Transform array and return a new one       | Perform an operation on each item           |
-| Return Value  | New array                                  | `undefined`                                 |
-| Use Case      | Data transformation                        | Side effects (logging, DOM updates, etc.)   |
-| Chaining      | ✅ Yes                                     | ❌ No                                       |
+| Feature      | `map()`                              | `forEach()`                               |
+| ------------ | ------------------------------------ | ----------------------------------------- |
+| Purpose      | Transform array and return a new one | Perform an operation on each item         |
+| Return Value | New array                            | `undefined`                               |
+| Use Case     | Data transformation                  | Side effects (logging, DOM updates, etc.) |
+| Chaining     | ✅ Yes                               | ❌ No                                     |
 
 ---
 
@@ -145,16 +144,16 @@ console.log(sum); // 10
 ### Object
 
 ```js
-const { a, b, c, ...h } = countChar("aabbcdEe");
+const { a, b, c, ...h } = countChar('aabbcdEe')
 // Output: a = 2, b = 2, c = 1, h = { d: 1, e: 2 }
 ```
 
 ### Array
 
 ```js
-const arr = [1, 2, 3];
-const [a, ...b] = arr;
-console.log(a, b); // 1 [2, 3]
+const arr = [1, 2, 3]
+const [a, ...b] = arr
+console.log(a, b) // 1 [2, 3]
 ```
 
 ---
@@ -166,11 +165,11 @@ console.log(a, b); // 1 [2, 3]
 
 ```js
 function debounce(func, delay) {
-  let timeout;
+  let timeout
   return function (...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), delay);
-  };
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func.apply(this, args), delay)
+  }
 }
 ```
 
@@ -183,14 +182,14 @@ function debounce(func, delay) {
 
 ```js
 function throttle(func, limit) {
-  let lastCall = 0;
+  let lastCall = 0
   return function (...args) {
-    const now = Date.now();
+    const now = Date.now()
     if (now - lastCall >= limit) {
-      lastCall = now;
-      func.apply(this, args);
+      lastCall = now
+      func.apply(this, args)
     }
-  };
+  }
 }
 ```
 
@@ -198,8 +197,26 @@ function throttle(func, limit) {
 
 ## 13. Debouncing vs Throttling
 
-| Feature   | Debounce                         | Throttle                              |
-|-----------|----------------------------------|----------------------------------------|
-| Trigger   | After a pause                    | At regular intervals                   |
-| Use Case  | Search inputs, resize window end | Scroll tracking, button mashing        |
-| Behavior  | Fires once after delay           | Fires every X ms during the event      |
+| Feature  | Debounce                         | Throttle                          |
+| -------- | -------------------------------- | --------------------------------- |
+| Trigger  | After a pause                    | At regular intervals              |
+| Use Case | Search inputs, resize window end | Scroll tracking, button mashing   |
+| Behavior | Fires once after delay           | Fires every X ms during the event |
+
+---
+
+## 14. `null` vs `undefined` ❓
+
+| Feature  | `null`                             | `undefined`                        |
+| -------- | ---------------------------------- | ---------------------------------- |
+| Meaning  | Explicit absence of value          | Variable declared but not assigned |
+| Type     | `"object"` (weird JS behavior❗️) | `"undefined"`                      |
+| Use Case | Intentional empty value            | Missing/forgotten value            |
+
+```javascript
+let a = null
+let b
+
+console.log(typeof a) // "object"
+console.log(typeof b) // "undefined"
+```
